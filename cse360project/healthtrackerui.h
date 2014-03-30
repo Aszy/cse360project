@@ -15,6 +15,10 @@ public:
     explicit HealthTrackerUI(QWidget *parent = 0);
     ~HealthTrackerUI();
 
+public slots:
+    void testSave();
+    void testLoad();
+
 private:
     Ui::HealthTrackerUI *ui;
 };

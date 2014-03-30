@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        healthtrackerui.cpp
+        healthtrackerui.cpp \
+    Data/data.cpp \
+    Data/healthdata.cpp \
+    Data/pulseratedata.cpp
 
-HEADERS  += healthtrackerui.h
+HEADERS  += healthtrackerui.h \
+    Data/data.h \
+    Data/healthdata.h \
+    Data/pulseratedata.h
 
 FORMS    += healthtrackerui.ui

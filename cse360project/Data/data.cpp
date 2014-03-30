@@ -2,16 +2,12 @@
 
 Data::Data()
 {
-}
-
-QString Data::type() const
-{
-    return "Data";
+    _type = NoneType;
 }
 
 QString Data::toString()
 {
-    return "Type: " + type() + " | Recorded Date: " + recordedDate().toString();
+    return "Type: " + Data::typeToString(type()) + " | Recorded Date: " + recordedDate().toString();
 }
 
 QDataStream &operator<<(QDataStream &out, const Data &data)
@@ -25,8 +21,19 @@ QDataStream &operator>>(QDataStream &in, Data &data)
     QDate date;
     in >> date;
 
-    data = Data();
     data.setRecordedDate(date);
 
+    return in;
+}
+
+QDataStream &operator<<(QDataStream &out, const DataType &data)
+{
+    out << (qint32&)data;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, DataType &data)
+{
+    in >> (qint32&)data;
     return in;
 }

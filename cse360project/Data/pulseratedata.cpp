@@ -3,7 +3,7 @@
 PulseRateData::PulseRateData() :
     HealthData()
 {
-
+    _type = PulseRateType;
 }
 
 PulseRateData::PulseRateData(int rate) :
@@ -17,11 +17,6 @@ PulseRateData::PulseRateData(HealthData data, int rate) : HealthData(data)
     setPulseRate(rate);
 }
 
-QString PulseRateData::type() const
-{
-    return "PulseRateData";
-}
-
 QString PulseRateData::toString()
 {
     return HealthData::toString() + " | Pulse Rate: " + QString::number(pulseRate());
@@ -29,7 +24,7 @@ QString PulseRateData::toString()
 
 QDataStream &operator<<(QDataStream &out, const PulseRateData &data)
 {
-    out << ((HealthData)data).recordedDate();
+    out << data.recordedDate();
     out << data.pulseRate();
     return out;
 }
@@ -40,7 +35,8 @@ QDataStream &operator>>(QDataStream &in, PulseRateData &data)
     int rate;
     in >> read >> rate;
 
-    data = PulseRateData(read, rate);
+    data.setPulseRate(rate);
+    data.setRecordedDate(read.recordedDate());
 
     return in;
 }

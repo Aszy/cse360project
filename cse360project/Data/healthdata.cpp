@@ -3,16 +3,12 @@
 HealthData::HealthData() :
     Data()
 {
+    _type = HealthType;
 }
 
 HealthData::HealthData(Data data) : Data()
 {
     setRecordedDate(data.recordedDate());
-}
-
-QString HealthData::type() const
-{
-    return "HealthData";
 }
 
 QString HealthData::toString()
@@ -31,7 +27,7 @@ QDataStream &operator>>(QDataStream &in, HealthData &data)
     Data read;
     in >> read;
 
-    data = HealthData(read);
+    data.setRecordedDate(read.recordedDate());
 
     return in;
 }

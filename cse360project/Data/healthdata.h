@@ -9,8 +9,6 @@ public:
     explicit HealthData();
     explicit HealthData(Data data);
 
-    virtual QString type() const;
-
     virtual QString toString();
 
 signals:

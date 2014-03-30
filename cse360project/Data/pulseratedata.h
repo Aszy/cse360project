@@ -14,8 +14,6 @@ public:
     int pulseRate() const { return _pulseRate; }
     void setPulseRate(int rate) { _pulseRate = rate; }
 
-    virtual QString type() const;
-
     virtual QString toString();
 
 signals:

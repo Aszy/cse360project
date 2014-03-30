@@ -87,14 +87,14 @@ void HealthTrackerUI::testSave()
         // Close the file.
         file.close();
 
+        // Notify the user.
+        QMessageBox::information(this, "Successfully saved data!", "Saved " + QString::number(dataList.count()) + " entries.");
+
         // Update the data list.
         qDeleteAll(dataList);
         dataList.clear();
         ui->labelEntries->setText("Entries: " + QString::number(dataList.count()));
         updateListWidget();
-
-        // Notify the user.
-        QMessageBox::information(this, "Successfully saved data!", "Saved " + QString::number(dataList.count()) + " entries.");
     }
 }
 

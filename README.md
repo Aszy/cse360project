@@ -20,7 +20,9 @@ Authors
 Download
 ---------
 
+* [Video of Phase II prototype \[00:34\]][1]
 
+[1]: https://raw.githubusercontent.com/Aszy/cse360project/master/phase2-prototype.mov
 
 Requirements
 ------------

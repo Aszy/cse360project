@@ -1,5 +1,5 @@
-#ifndef HEALTHTRACKERUI_H
-#define HEALTHTRACKERUI_H
+#ifndef SAMPLEUI_H
+#define SAMPLEUI_H
 
 #include <QMainWindow>
 #include <QList>
@@ -31,4 +31,4 @@ private:
     QList<Data *> dataList;
 };
 
-#endif // HEALTHTRACKERUI_H
+#endif // SAMPLEUI_H

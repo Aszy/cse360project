@@ -5,6 +5,8 @@ Data::Data()
     _type = NoneType;
 }
 
+QList<Data *> Data::repository = QList<Data *>();
+
 QString Data::toString()
 {
     return "Type: " + Data::typeToString(type()) + " | Recorded Date: " + recordedDate().toString();

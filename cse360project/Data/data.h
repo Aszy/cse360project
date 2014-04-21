@@ -67,6 +67,8 @@ public: /* static */
         }
     }
 
+    static QList<Data *> repository;
+
 };
 
 // Serialization

@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     Data/strengthworkoutdata.cpp \
     Data/workhoursdata.cpp \
     Data/caloriesdata.cpp \
-    Data/cardioworkoutdata.cpp
+    Data/cardioworkoutdata.cpp \
+    Data/UI/pulseratedataui.cpp \
+    enterdataui.cpp
 
 HEADERS  += \
     Data/data.h \
@@ -42,11 +44,15 @@ HEADERS  += \
     Data/strengthworkoutdata.h \
     Data/workhoursdata.h \
     Data/caloriesdata.h \
-    Data/cardioworkoutdata.h
+    Data/cardioworkoutdata.h \
+    Data/UI/pulseratedataui.h \
+    enterdataui.h
 
 FORMS    += \
     sampleui.ui \
-    healthtrackerui.ui
+    healthtrackerui.ui \
+    Data/UI/pulseratedataui.ui \
+    enterdataui.ui
 
 RESOURCES += \
     resources.qrc

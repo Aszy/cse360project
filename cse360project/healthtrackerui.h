@@ -1,16 +1,13 @@
 #ifndef HEALTHTRACKERUI_H
 #define HEALTHTRACKERUI_H
 
-#include <QMainWindow>
-#include <QList>
-
-#include "Data/data.h"
+#include <QDialog>
 
 namespace Ui {
 class HealthTrackerUI;
 }
 
-class HealthTrackerUI : public QMainWindow
+class HealthTrackerUI : public QDialog
 {
     Q_OBJECT
 
@@ -18,17 +15,8 @@ public:
     explicit HealthTrackerUI(QWidget *parent = 0);
     ~HealthTrackerUI();
 
-public slots:
-    void submitPulseRateData();
-    void updateListWidget();
-
-    void testSave();
-    void testLoad();
-
 private:
     Ui::HealthTrackerUI *ui;
-
-    QList<Data *> dataList;
 };
 
 #endif // HEALTHTRACKERUI_H

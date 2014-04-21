@@ -13,14 +13,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        healthtrackerui.cpp \
     Data/data.cpp \
     Data/healthdata.cpp \
-    Data/pulseratedata.cpp
+    Data/pulseratedata.cpp \
+    sampleui.cpp \
+    healthtrackerui.cpp
 
-HEADERS  += healthtrackerui.h \
+HEADERS  += \
     Data/data.h \
     Data/healthdata.h \
-    Data/pulseratedata.h
+    Data/pulseratedata.h \
+    sampleui.h \
+    healthtrackerui.h
 
-FORMS    += healthtrackerui.ui
+FORMS    += \
+    sampleui.ui \
+    healthtrackerui.ui
+
+RESOURCES += \
+    resources.qrc

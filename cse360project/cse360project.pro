@@ -17,14 +17,32 @@ SOURCES += main.cpp\
     Data/healthdata.cpp \
     Data/pulseratedata.cpp \
     sampleui.cpp \
-    healthtrackerui.cpp
+    healthtrackerui.cpp \
+    Data/bloodsugardata.cpp \
+    Data/temperaturedata.cpp \
+    Data/bloodpressuredata.cpp \
+    Data/physicalactivitydata.cpp \
+    Data/sleepamountdata.cpp \
+    Data/strengthworkoutdata.cpp \
+    Data/workhoursdata.cpp \
+    Data/caloriesdata.cpp \
+    Data/cardioworkoutdata.cpp
 
 HEADERS  += \
     Data/data.h \
     Data/healthdata.h \
     Data/pulseratedata.h \
     sampleui.h \
-    healthtrackerui.h
+    healthtrackerui.h \
+    Data/bloodsugardata.h \
+    Data/temperaturedata.h \
+    Data/bloodpressuredata.h \
+    Data/physicalactivitydata.h \
+    Data/sleepamountdata.h \
+    Data/strengthworkoutdata.h \
+    Data/workhoursdata.h \
+    Data/caloriesdata.h \
+    Data/cardioworkoutdata.h
 
 FORMS    += \
     sampleui.ui \

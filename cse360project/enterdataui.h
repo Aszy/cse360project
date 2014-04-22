@@ -21,6 +21,13 @@ public slots:
     void showTemperatureDataUI();
     void showBloodSugarDataUI();
     void showBloodPressureDataUI();
+
+    void showCaloriesDataUI();
+    void showSleepAmountDataUI();
+    void showWorkHoursDataUI();
+    void showCardioWorkoutDataUI();
+    void showStrengthWorkoutDataUI();
+
     void cancel();
 
 private:

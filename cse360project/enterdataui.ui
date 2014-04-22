@@ -27,35 +27,35 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="buttonCalories">
         <property name="text">
          <string>Calories</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="buttonSleepAmount">
         <property name="text">
          <string>Sleep Amount</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="buttonWorkHours">
         <property name="text">
          <string>Work Hours</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="buttonCardioWorkout">
         <property name="text">
          <string>Cardio Workout</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="buttonStrengthWorkout">
         <property name="text">
          <string>Strength Workout</string>
         </property>
@@ -239,6 +239,86 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>buttonCalories</sender>
+   <signal>clicked()</signal>
+   <receiver>EnterDataUI</receiver>
+   <slot>showCaloriesDataUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSleepAmount</sender>
+   <signal>clicked()</signal>
+   <receiver>EnterDataUI</receiver>
+   <slot>showSleepAmountDataUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>289</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonWorkHours</sender>
+   <signal>clicked()</signal>
+   <receiver>EnterDataUI</receiver>
+   <slot>showWorkHoursDataUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCardioWorkout</sender>
+   <signal>clicked()</signal>
+   <receiver>EnterDataUI</receiver>
+   <slot>showCardioWorkoutDataUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>289</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonStrengthWorkout</sender>
+   <signal>clicked()</signal>
+   <receiver>EnterDataUI</receiver>
+   <slot>showStrengthWorkoutDataUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cancel()</slot>
@@ -246,5 +326,10 @@
   <slot>showTemperatureDataUI()</slot>
   <slot>showBloodSugarDataUI()</slot>
   <slot>showBloodPressureDataUI()</slot>
+  <slot>showCaloriesDataUI()</slot>
+  <slot>showSleepAmountDataUI()</slot>
+  <slot>showWorkHoursDataUI()</slot>
+  <slot>showCardioWorkoutDataUI()</slot>
+  <slot>showStrengthWorkoutDataUI()</slot>
  </slots>
 </ui>

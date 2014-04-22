@@ -17,7 +17,7 @@ public:
     float runDistance() const { return _runDistance; }
     void setRunDistance(float distance) { _runDistance = distance; }
 
-    float averageRunSpeed() { return _runTime / _runDistance; }
+    float averageRunSpeed() { return _runDistance / _runTime; }
 
     virtual QString toString();
 

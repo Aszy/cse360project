@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BloodSugarDataUI</class>
- <widget class="QMainWindow" name="BloodSugarDataUI">
+ <class>CardioWorkoutDataUI</class>
+ <widget class="QMainWindow" name="CardioWorkoutDataUI">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>384</width>
-    <height>227</height>
+    <height>297</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>384</width>
-    <height>227</height>
+    <height>297</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>384</width>
-    <height>227</height>
+    <height>297</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,7 @@
       <x>30</x>
       <y>20</y>
       <width>331</width>
-      <height>171</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -53,7 +53,7 @@
        <x>10</x>
        <y>10</y>
        <width>311</width>
-       <height>112</height>
+       <height>181</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -117,32 +117,80 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Blood Sugar:</string>
+         <string>Run Time</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Run Distance</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Average Run Speed:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="labelRunSpeed">
+        <property name="text">
+         <string>1 mph</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QDoubleSpinBox" name="spinBloodSugar">
+         <widget class="QDoubleSpinBox" name="spinRunTime">
           <property name="decimals">
            <number>1</number>
           </property>
           <property name="maximum">
-           <double>250.000000000000000</double>
+           <double>24.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>1.000000000000000</double>
+           <double>0.500000000000000</double>
           </property>
           <property name="value">
-           <double>100.000000000000000</double>
+           <double>1.000000000000000</double>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="label_5">
           <property name="text">
-           <string>mg/dL</string>
+           <string>hours</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QDoubleSpinBox" name="spinRunDistance">
+          <property name="decimals">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <double>24.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.500000000000000</double>
+          </property>
+          <property name="value">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>miles</string>
           </property>
          </widget>
         </item>
@@ -154,7 +202,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>120</y>
+       <y>180</y>
        <width>331</width>
        <height>16</height>
       </rect>
@@ -167,7 +215,7 @@
      <property name="geometry">
       <rect>
        <x>82</x>
-       <y>133</y>
+       <y>195</y>
        <width>169</width>
        <height>32</height>
       </rect>
@@ -190,6 +238,8 @@
      </layout>
     </widget>
    </widget>
+   <zorder>frame</zorder>
+   <zorder>layoutWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -224,7 +274,7 @@
   <connection>
    <sender>buttonSubmit</sender>
    <signal>clicked()</signal>
-   <receiver>BloodSugarDataUI</receiver>
+   <receiver>CardioWorkoutDataUI</receiver>
    <slot>submitData()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -240,7 +290,7 @@
   <connection>
    <sender>buttonCancel</sender>
    <signal>clicked()</signal>
-   <receiver>BloodSugarDataUI</receiver>
+   <receiver>CardioWorkoutDataUI</receiver>
    <slot>cancel()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -253,9 +303,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>spinRunDistance</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>CardioWorkoutDataUI</receiver>
+   <slot>updateRunSpeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinRunTime</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>CardioWorkoutDataUI</receiver>
+   <slot>updateRunSpeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>submitData()</slot>
   <slot>cancel()</slot>
+  <slot>updateRunSpeed()</slot>
  </slots>
 </ui>

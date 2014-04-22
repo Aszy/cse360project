@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BloodSugarDataUI</class>
- <widget class="QMainWindow" name="BloodSugarDataUI">
+ <class>StrengthWorkoutDataUI</class>
+ <widget class="QMainWindow" name="StrengthWorkoutDataUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -117,32 +117,32 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Blood Sugar:</string>
+         <string>Workout Hours:</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QDoubleSpinBox" name="spinBloodSugar">
+         <widget class="QDoubleSpinBox" name="spinWorkoutTime">
           <property name="decimals">
            <number>1</number>
           </property>
           <property name="maximum">
-           <double>250.000000000000000</double>
+           <double>24.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>1.000000000000000</double>
+           <double>0.500000000000000</double>
           </property>
           <property name="value">
-           <double>100.000000000000000</double>
+           <double>1.000000000000000</double>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>mg/dL</string>
+           <string>hours</string>
           </property>
          </widget>
         </item>
@@ -224,7 +224,7 @@
   <connection>
    <sender>buttonSubmit</sender>
    <signal>clicked()</signal>
-   <receiver>BloodSugarDataUI</receiver>
+   <receiver>StrengthWorkoutDataUI</receiver>
    <slot>submitData()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -240,7 +240,7 @@
   <connection>
    <sender>buttonCancel</sender>
    <signal>clicked()</signal>
-   <receiver>BloodSugarDataUI</receiver>
+   <receiver>StrengthWorkoutDataUI</receiver>
    <slot>cancel()</slot>
    <hints>
     <hint type="sourcelabel">

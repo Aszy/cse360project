@@ -19,7 +19,7 @@ TemperatureData::TemperatureData(HealthData data, float level) : HealthData(data
 
 QString TemperatureData::toString()
 {
-    return HealthData::toString() + " | Temperature: " + QString::number(temperature());
+    return HealthData::toString() + " | Temperature: " + QString::number(temperature(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const TemperatureData &data)
@@ -32,10 +32,10 @@ QDataStream &operator<<(QDataStream &out, const TemperatureData &data)
 QDataStream &operator>>(QDataStream &in, TemperatureData &data)
 {
     HealthData read;
-    float level;
-    in >> read >> level;
+    float temperature;
+    in >> read >> temperature;
 
-    data.setTemperature(level);
+    data.setTemperature(temperature);
     data.setRecordedDate(read.recordedDate());
 
     return in;

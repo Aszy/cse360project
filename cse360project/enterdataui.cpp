@@ -2,6 +2,7 @@
 #include "ui_enterdataui.h"
 
 #include "Data/UI/pulseratedataui.h"
+#include "Data/UI/temperaturedataui.h"
 
 #include "healthtrackerui.h"
 
@@ -22,6 +23,15 @@ void EnterDataUI::showPulseRateDataUI()
     this->close();
 
     PulseRateDataUI *dataUI = new PulseRateDataUI();
+    dataUI->setVisible(true);
+}
+
+
+void EnterDataUI::showTemperatureDataUI()
+{
+    this->close();
+
+    TemperatureDataUI *dataUI = new TemperatureDataUI();
     dataUI->setVisible(true);
 }
 

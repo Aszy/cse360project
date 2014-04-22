@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PulseRateDataUI</class>
- <widget class="QMainWindow" name="PulseRateDataUI">
+ <class>TemperatureDataUI</class>
+ <widget class="QMainWindow" name="TemperatureDataUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -117,17 +117,23 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Pulse Rate:</string>
+         <string>Temperature:</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QSpinBox" name="spinPulseRate">
+       <widget class="QDoubleSpinBox" name="spinTemperature">
+        <property name="decimals">
+         <number>1</number>
+        </property>
         <property name="maximum">
-         <number>500</number>
+         <double>150.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.100000000000000</double>
         </property>
         <property name="value">
-         <number>60</number>
+         <double>98.599999999999994</double>
         </property>
        </widget>
       </item>
@@ -207,7 +213,7 @@
   <connection>
    <sender>buttonSubmit</sender>
    <signal>clicked()</signal>
-   <receiver>PulseRateDataUI</receiver>
+   <receiver>TemperatureDataUI</receiver>
    <slot>submitData()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -223,7 +229,7 @@
   <connection>
    <sender>buttonCancel</sender>
    <signal>clicked()</signal>
-   <receiver>PulseRateDataUI</receiver>
+   <receiver>TemperatureDataUI</receiver>
    <slot>cancel()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -18,6 +18,7 @@ public:
 
 public slots:
     void showPulseRateDataUI();
+    void showTemperatureDataUI();
     void cancel();
 
 private:

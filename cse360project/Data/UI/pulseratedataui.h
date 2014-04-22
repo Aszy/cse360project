@@ -19,7 +19,7 @@ public:
     ~PulseRateDataUI();
 
 public slots:
-    void submitPulseRateData();
+    void submitData();
     void cancel();
 
 private:

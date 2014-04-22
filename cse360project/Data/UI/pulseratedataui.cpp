@@ -22,7 +22,7 @@ PulseRateDataUI::~PulseRateDataUI()
     delete ui;
 }
 
-void PulseRateDataUI::submitPulseRateData()
+void PulseRateDataUI::submitData()
 {
     // Get the attributes.
     int rate = ui->spinPulseRate->value();

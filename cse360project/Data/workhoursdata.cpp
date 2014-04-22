@@ -19,7 +19,7 @@ WorkHoursData::WorkHoursData(PhysicalActivityData data, float hours) : PhysicalA
 
 QString WorkHoursData::toString()
 {
-    return PhysicalActivityData::toString() + " | WorkHours: " + QString::number(hoursWorked());
+    return PhysicalActivityData::toString() + " | Work Hours: " + QString::number(hoursWorked(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const WorkHoursData &data)

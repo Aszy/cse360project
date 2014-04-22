@@ -11,10 +11,10 @@ public:
     explicit BloodPressureData(HealthData data, int systolic, int diastolic);
 
     // Accessors
-    float systolicPressure() const { return _systolic; }
+    int systolicPressure() const { return _systolic; }
     void setSystolicPressure(int systolic) { _systolic = systolic; }
 
-    float diastolicPressure() const { return _diastolic; }
+    int diastolicPressure() const { return _diastolic; }
     void setDiastolicPressure(int diastolic) { _diastolic = diastolic; }
 
     virtual QString toString();

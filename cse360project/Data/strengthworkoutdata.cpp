@@ -19,7 +19,7 @@ StrengthWorkoutData::StrengthWorkoutData(PhysicalActivityData data, float workou
 
 QString StrengthWorkoutData::toString()
 {
-    return PhysicalActivityData::toString() + " | Sleep Amount: " + QString::number(workoutTime());
+    return PhysicalActivityData::toString() + " | Strength Workout Time: " + QString::number(workoutTime(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const StrengthWorkoutData &data)

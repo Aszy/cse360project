@@ -21,7 +21,7 @@ CardioWorkoutData::CardioWorkoutData(PhysicalActivityData data, float time, floa
 
 QString CardioWorkoutData::toString()
 {
-    return PhysicalActivityData::toString() + " | Cardio Workout, Time: " + QString::number(runTime()) + ", Distance: " + QString::number(runDistance());
+    return PhysicalActivityData::toString() + " | Cardio Workout, Time: " + QString::number(runTime(), 'f', 1) + ", Distance: " + QString::number(runDistance(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const CardioWorkoutData &data)

@@ -19,7 +19,7 @@ BloodSugarData::BloodSugarData(HealthData data, float level) : HealthData(data)
 
 QString BloodSugarData::toString()
 {
-    return HealthData::toString() + " | Blood Sugar: " + QString::number(bloodSugar());
+    return HealthData::toString() + " | Blood Sugar: " + QString::number(bloodSugar(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const BloodSugarData &data)

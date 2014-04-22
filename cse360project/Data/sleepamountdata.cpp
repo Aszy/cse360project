@@ -19,7 +19,7 @@ SleepAmountData::SleepAmountData(PhysicalActivityData data, float hours) : Physi
 
 QString SleepAmountData::toString()
 {
-    return PhysicalActivityData::toString() + " | Sleep Amount: " + QString::number(hoursSlept());
+    return PhysicalActivityData::toString() + " | Sleep Amount: " + QString::number(hoursSlept(), 'f', 1);
 }
 
 QDataStream &operator<<(QDataStream &out, const SleepAmountData &data)

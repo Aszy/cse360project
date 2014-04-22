@@ -3,6 +3,8 @@
 
 #include "Data/UI/pulseratedataui.h"
 #include "Data/UI/temperaturedataui.h"
+#include "Data/UI/bloodsugardataui.h"
+#include "Data/UI/bloodpressuredataui.h"
 
 #include "healthtrackerui.h"
 
@@ -26,12 +28,27 @@ void EnterDataUI::showPulseRateDataUI()
     dataUI->setVisible(true);
 }
 
-
 void EnterDataUI::showTemperatureDataUI()
 {
     this->close();
 
     TemperatureDataUI *dataUI = new TemperatureDataUI();
+    dataUI->setVisible(true);
+}
+
+void EnterDataUI::showBloodSugarDataUI()
+{
+    this->close();
+
+    BloodSugarDataUI *dataUI = new BloodSugarDataUI();
+    dataUI->setVisible(true);
+}
+
+void EnterDataUI::showBloodPressureDataUI()
+{
+    this->close();
+
+    BloodPressureDataUI *dataUI = new BloodPressureDataUI();
     dataUI->setVisible(true);
 }
 

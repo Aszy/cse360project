@@ -19,6 +19,8 @@ public:
 public slots:
     void showPulseRateDataUI();
     void showTemperatureDataUI();
+    void showBloodSugarDataUI();
+    void showBloodPressureDataUI();
     void cancel();
 
 private:

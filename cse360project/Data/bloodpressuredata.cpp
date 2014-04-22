@@ -21,7 +21,7 @@ BloodPressureData::BloodPressureData(HealthData data, int systolic, int diastoli
 
 QString BloodPressureData::toString()
 {
-    return HealthData::toString() + " | Blood Pressure, Systolic: " + QString::number(systolicPressure()) + " Diastolic: " + QString::number(diastolicPressure());
+    return HealthData::toString() + " | Blood Pressure, Systolic: " + QString::number(systolicPressure()) + ", Diastolic: " + QString::number(diastolicPressure());
 }
 
 QDataStream &operator<<(QDataStream &out, const BloodPressureData &data)

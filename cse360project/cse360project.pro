@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -38,7 +38,9 @@ SOURCES += main.cpp\
     Data/UI/strengthworkoutdataui.cpp \
     Data/UI/cardioworkoutdataui.cpp \
     reportui.cpp \
-    Data/serializer.cpp
+    Data/serializer.cpp \
+    Report/report.cpp \
+    Report/pulseratereport.cpp
 
 HEADERS  += \
     Data/data.h \
@@ -66,7 +68,9 @@ HEADERS  += \
     Data/UI/strengthworkoutdataui.h \
     Data/UI/cardioworkoutdataui.h \
     reportui.h \
-    Data/serializer.h
+    Data/serializer.h \
+    Report/report.h \
+    Report/pulseratereport.h
 
 FORMS    += \
     sampleui.ui \

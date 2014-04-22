@@ -2,6 +2,7 @@
 #include "ui_healthtrackerui.h"
 
 #include "enterdataui.h"
+#include "reportui.h"
 
 #include <QDebug>
 
@@ -28,4 +29,12 @@ void HealthTrackerUI::openEnterDataUI()
 
     EnterDataUI *dataUI = new EnterDataUI();
     dataUI->setVisible(true);
+}
+
+void HealthTrackerUI::openReportUI()
+{
+    this->close();
+
+    ReportUI *reportUI = new ReportUI();
+    reportUI->setVisible(true);
 }

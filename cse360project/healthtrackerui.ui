@@ -210,8 +210,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>btnReports</sender>
+   <signal>clicked()</signal>
+   <receiver>HealthTrackerUI</receiver>
+   <slot>openReportUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>openEnterDataUI()</slot>
+  <slot>openReportUI()</slot>
  </slots>
 </ui>

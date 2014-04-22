@@ -17,6 +17,7 @@ public:
 
 public slots:
     void openEnterDataUI();
+    void openReportUI();
 
 private:
     Ui::HealthTrackerUI *ui;

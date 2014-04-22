@@ -44,7 +44,7 @@ void BloodPressureDataUI::submitData()
     Data::repository.append(bloodPressureData);
 
     // Go back to the menu.
-    QMessageBox::information(this, "Success", "Successfully submitted pulse rate data.");
+    QMessageBox::information(this, "Success", "Successfully submitted blood pressure data.");
     this->cancel();
 }
 

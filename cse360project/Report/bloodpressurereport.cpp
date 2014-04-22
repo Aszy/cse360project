@@ -1,16 +1,16 @@
-#include "pulseratereport.h"
-#include "Data/pulseratedata.h"
+#include "bloodpressurereport.h"
+#include "Data/bloodpressuredata.h"
 
 #include <QDebug>
 
-PulseRateReport::PulseRateReport(QList<Data *> repository, QDate start, QDate end)
+BloodPressureReport::BloodPressureReport(QList<Data *> repository, QDate start, QDate end)
     : Report(repository, start, end)
 {
-    _type = PulseRateType;
+    _type = BloodPressureType;
 
     foreach (Data *data, repository)
     {
-        if (data->type() == PulseRateType && start <= data->recordedDate() && end >= data->recordedDate())
+        if (data->type() == BloodPressureType && start <= data->recordedDate() && end >= data->recordedDate())
         {
             _dataList.append(data);
         }
@@ -23,7 +23,7 @@ PulseRateReport::PulseRateReport(QList<Data *> repository, QDate start, QDate en
 }
 
 
-QString PulseRateReport::graphHtml() const
+QString BloodPressureReport::graphHtml() const
 {
     if (_dataList.isEmpty())
         return "Not enough data for report.";
@@ -40,7 +40,7 @@ QString PulseRateReport::graphHtml() const
            "    <script type=\"text/javascript\">"
            "      function drawVisualization() {"
            "        var data = google.visualization.arrayToDataTable(["
-           "          ['x', 'Pulse Rate'],"
+           "          ['x', 'Systolic Blood Pressure', 'Diastolic Blood Pressure'],"
            "           %1"
            "        ]);"
            ""
@@ -58,10 +58,12 @@ QString PulseRateReport::graphHtml() const
 
     QString formatted;
 
-    foreach (Data *data, _dataList)
+    foreach (Data *bdata, _dataList)
     {
-        PulseRateData *prd = dynamic_cast<PulseRateData *>(data);
-        formatted += "['" + prd->recordedDate().toString() + "', " + QString::number(prd->pulseRate()) + "],";
+        BloodPressureData *data = dynamic_cast<BloodPressureData *>(bdata);
+        formatted += "['" + data->recordedDate().toString() + "', ";
+        formatted += QString::number(data->systolicPressure()) + ", ";
+        formatted += QString::number(data->diastolicPressure()) + "],";
     }
 
     return html.arg(formatted);

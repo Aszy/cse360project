@@ -8,7 +8,7 @@ class PulseRateReport : public Report
 public:
     PulseRateReport(QList<Data *> repository, QDate start, QDate end);
 
-    virtual QString graphURL() const;
+    virtual QString graphHtml() const;
 };
 
 #endif // PULSERATEREPORT_H

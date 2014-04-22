@@ -19,6 +19,7 @@ public:
 
 public slots:
     void generateReport();
+    void reportTabChanged(int);
     void cancel();
 
 private:

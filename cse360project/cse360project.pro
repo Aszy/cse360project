@@ -39,7 +39,15 @@ SOURCES += main.cpp\
     reportui.cpp \
     Data/serializer.cpp \
     Report/report.cpp \
-    Report/pulseratereport.cpp
+    Report/pulseratereport.cpp \
+    Report/bloodsugarreport.cpp \
+    Report/bloodpressurereport.cpp \
+    Report/temperaturereport.cpp \
+    Report/caloriesreport.cpp \
+    Report/sleepamountreport.cpp \
+    Report/strengthworkoutreport.cpp \
+    Report/workhoursreport.cpp \
+    Report/cardioworkoutreport.cpp
 
 HEADERS  += \
     Data/data.h \
@@ -68,7 +76,15 @@ HEADERS  += \
     reportui.h \
     Data/serializer.h \
     Report/report.h \
-    Report/pulseratereport.h
+    Report/pulseratereport.h \
+    Report/bloodsugarreport.h \
+    Report/bloodpressurereport.h \
+    Report/temperaturereport.h \
+    Report/caloriesreport.h \
+    Report/sleepamountreport.h \
+    Report/strengthworkoutreport.h \
+    Report/workhoursreport.h \
+    Report/cardioworkoutreport.h
 
 FORMS    += \
     healthtrackerui.ui \

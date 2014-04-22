@@ -1,16 +1,16 @@
-#include "pulseratereport.h"
-#include "Data/pulseratedata.h"
+#include "bloodsugarreport.h"
+#include "Data/bloodsugardata.h"
 
 #include <QDebug>
 
-PulseRateReport::PulseRateReport(QList<Data *> repository, QDate start, QDate end)
+BloodSugarReport::BloodSugarReport(QList<Data *> repository, QDate start, QDate end)
     : Report(repository, start, end)
 {
-    _type = PulseRateType;
+    _type = BloodSugarType;
 
     foreach (Data *data, repository)
     {
-        if (data->type() == PulseRateType && start <= data->recordedDate() && end >= data->recordedDate())
+        if (data->type() == BloodSugarType && start <= data->recordedDate() && end >= data->recordedDate())
         {
             _dataList.append(data);
         }
@@ -23,7 +23,7 @@ PulseRateReport::PulseRateReport(QList<Data *> repository, QDate start, QDate en
 }
 
 
-QString PulseRateReport::graphHtml() const
+QString BloodSugarReport::graphHtml() const
 {
     if (_dataList.isEmpty())
         return "Not enough data for report.";
@@ -40,7 +40,7 @@ QString PulseRateReport::graphHtml() const
            "    <script type=\"text/javascript\">"
            "      function drawVisualization() {"
            "        var data = google.visualization.arrayToDataTable(["
-           "          ['x', 'Pulse Rate'],"
+           "          ['x', 'Blood Sugar'],"
            "           %1"
            "        ]);"
            ""
@@ -58,10 +58,10 @@ QString PulseRateReport::graphHtml() const
 
     QString formatted;
 
-    foreach (Data *data, _dataList)
+    foreach (Data *bdata, _dataList)
     {
-        PulseRateData *prd = dynamic_cast<PulseRateData *>(data);
-        formatted += "['" + prd->recordedDate().toString() + "', " + QString::number(prd->pulseRate()) + "],";
+        BloodSugarData *data = dynamic_cast<BloodSugarData *>(bdata);
+        formatted += "['" + data->recordedDate().toString() + "', " + QString::number(data->bloodSugar(), 'f', 1) + "],";
     }
 
     return html.arg(formatted);

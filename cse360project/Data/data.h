@@ -46,26 +46,8 @@ private:
     QDate _recordedDate;
 
 public: /* static */
-    static QString typeToString(DataType value)
-    {
-        switch (value)
-        {
-        case HealthType:            return "HealthData";
-        case PulseRateType:         return "PulseRateData";
-        case BloodPressureType:     return "BloodPressureData";
-        case BloodSugarType:        return "BloodSugarData";
-        case TemperatureType:       return "TemperatureData";
-
-        case PhysicalActivityType:	return "PhysicalActivityData";
-        case StrengthWorkoutType:	return "StrengthWorkoutData";
-        case CardioWorkoutType:     return "CardioWorkoutData";
-        case SleepAmountType:   	return "SleepAmountData";
-        case WorkHoursType:         return "WorkHoursData";
-        case CaloriesType:          return "CaloriesData";
-
-        default:                    return "Data";
-        }
-    }
+    static QString typeToString(DataType value);
+    static QString typeToFriendlyString(DataType value);
 
     static QList<Data *> repository;
 

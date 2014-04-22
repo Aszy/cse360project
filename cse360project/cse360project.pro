@@ -36,7 +36,9 @@ SOURCES += main.cpp\
     Data/UI/sleepamountdataui.cpp \
     Data/UI/workhoursdataui.cpp \
     Data/UI/strengthworkoutdataui.cpp \
-    Data/UI/cardioworkoutdataui.cpp
+    Data/UI/cardioworkoutdataui.cpp \
+    reportui.cpp \
+    Data/serializer.cpp
 
 HEADERS  += \
     Data/data.h \
@@ -62,7 +64,9 @@ HEADERS  += \
     Data/UI/sleepamountdataui.h \
     Data/UI/workhoursdataui.h \
     Data/UI/strengthworkoutdataui.h \
-    Data/UI/cardioworkoutdataui.h
+    Data/UI/cardioworkoutdataui.h \
+    reportui.h \
+    Data/serializer.h
 
 FORMS    += \
     sampleui.ui \
@@ -76,7 +80,8 @@ FORMS    += \
     Data/UI/sleepamountdataui.ui \
     Data/UI/workhoursdataui.ui \
     Data/UI/strengthworkoutdataui.ui \
-    Data/UI/cardioworkoutdataui.ui
+    Data/UI/cardioworkoutdataui.ui \
+    reportui.ui
 
 RESOURCES += \
     resources.qrc

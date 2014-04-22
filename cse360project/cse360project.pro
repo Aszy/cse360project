@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     Data/data.cpp \
     Data/healthdata.cpp \
     Data/pulseratedata.cpp \
-    sampleui.cpp \
     healthtrackerui.cpp \
     Data/bloodsugardata.cpp \
     Data/temperaturedata.cpp \
@@ -46,7 +45,6 @@ HEADERS  += \
     Data/data.h \
     Data/healthdata.h \
     Data/pulseratedata.h \
-    sampleui.h \
     healthtrackerui.h \
     Data/bloodsugardata.h \
     Data/temperaturedata.h \
@@ -73,7 +71,6 @@ HEADERS  += \
     Report/pulseratereport.h
 
 FORMS    += \
-    sampleui.ui \
     healthtrackerui.ui \
     Data/UI/pulseratedataui.ui \
     enterdataui.ui \

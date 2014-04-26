@@ -28,6 +28,7 @@ ReportUI::ReportUI(QWidget *parent) :
     palette.setBrush(QPalette::Base, Qt::transparent);
     ui->webView->page()->setPalette(palette);
     ui->webView->setAttribute(Qt::WA_OpaquePaintEvent, false);
+    ui->webView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 }
 
 ReportUI::~ReportUI()

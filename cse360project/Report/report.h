@@ -22,6 +22,7 @@ public:
     QDate endDate() { return _end; }
 
     static QString graphHtmlTemplate(QStringList headers, QList<QStringList> data);
+    static QString notEnoughDataTemplate();
 
 protected:
     DataType _type;

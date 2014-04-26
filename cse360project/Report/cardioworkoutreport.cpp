@@ -26,7 +26,7 @@ CardioWorkoutReport::CardioWorkoutReport(QList<Data *> repository, QDate start, 
 QString CardioWorkoutReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Run Time" << "Run Distance" << "Average Run Spin";
     QList<QStringList> dataRows;

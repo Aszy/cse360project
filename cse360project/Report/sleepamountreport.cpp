@@ -26,7 +26,7 @@ SleepAmountReport::SleepAmountReport(QList<Data *> repository, QDate start, QDat
 QString SleepAmountReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Hours Slept";
     QList<QStringList> dataRows;

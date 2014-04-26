@@ -26,7 +26,7 @@ BloodSugarReport::BloodSugarReport(QList<Data *> repository, QDate start, QDate 
 QString BloodSugarReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Blood Sugar";
     QList<QStringList> dataRows;

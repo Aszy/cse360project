@@ -41,10 +41,21 @@ QString Report::graphHtmlTemplate(QStringList headers, QList<QStringList> data)
            "    </script>"
            "  </head>"
            "  <body style=\"font-family: Arial;border: 0 none;\">"
-           "    <div id=\"visualization\" style=\"margin: -50px auto 0 auto; width: 500px; height: 400px;\"></div>"
+           "    <div id=\"visualization\" style=\"margin: 0 auto; width: 500px; height: 400px; border: 1px solid #bbb; background: white;\"></div>"
            "  </body>"
            "</html>​"
     );
 
     return formatted.arg(headerRow, dataRows);
+}
+
+QString Report::notEnoughDataTemplate()
+{
+    return QString(
+        "<html>"
+        "  <body style=\"text-align:center;font-family:Verdana;font-size:13px;\">"
+        "    <span>Not enough data for report.</span>"
+        "  </body>"
+        "</html>"
+    );
 }

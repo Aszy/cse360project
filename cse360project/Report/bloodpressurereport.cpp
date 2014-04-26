@@ -26,7 +26,7 @@ BloodPressureReport::BloodPressureReport(QList<Data *> repository, QDate start, 
 QString BloodPressureReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Systolic Blood Pressure" << "Diastolic Blood Pressure";
     QList<QStringList> dataRows;

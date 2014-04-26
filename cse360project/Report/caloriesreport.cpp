@@ -26,7 +26,7 @@ CaloriesReport::CaloriesReport(QList<Data *> repository, QDate start, QDate end)
 QString CaloriesReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Calories";
     QList<QStringList> dataRows;

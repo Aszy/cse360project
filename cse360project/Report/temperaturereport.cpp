@@ -26,7 +26,7 @@ TemperatureReport::TemperatureReport(QList<Data *> repository, QDate start, QDat
 QString TemperatureReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Temperature";
     QList<QStringList> dataRows;

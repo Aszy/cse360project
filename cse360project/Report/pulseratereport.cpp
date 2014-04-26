@@ -26,7 +26,7 @@ PulseRateReport::PulseRateReport(QList<Data *> repository, QDate start, QDate en
 QString PulseRateReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Pulse Rate";
     QList<QStringList> dataRows;

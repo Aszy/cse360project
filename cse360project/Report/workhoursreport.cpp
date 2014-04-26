@@ -26,7 +26,7 @@ WorkHoursReport::WorkHoursReport(QList<Data *> repository, QDate start, QDate en
 QString WorkHoursReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Hours Worked";
     QList<QStringList> dataRows;

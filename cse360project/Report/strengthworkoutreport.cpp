@@ -26,7 +26,7 @@ StrengthWorkoutReport::StrengthWorkoutReport(QList<Data *> repository, QDate sta
 QString StrengthWorkoutReport::graphHtml() const
 {
     if (_dataList.isEmpty())
-        return "Not enough data for report.";
+        return Report::notEnoughDataTemplate();
 
     QStringList headers = QStringList() << "x" << "Workout Time";
     QList<QStringList> dataRows;

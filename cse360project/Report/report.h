@@ -4,6 +4,7 @@
 #include "Data/data.h"
 
 #include <QList>
+#include <QStringList>
 #include <QDate>
 
 class Report
@@ -19,6 +20,8 @@ public:
     QList<Data *> dataList() { return _dataList; }
     QDate startDate() { return _start; }
     QDate endDate() { return _end; }
+
+    static QString graphHtmlTemplate(QStringList headers, QList<QStringList> data);
 
 protected:
     DataType _type;

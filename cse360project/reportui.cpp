@@ -23,6 +23,11 @@ ReportUI::ReportUI(QWidget *parent) :
     ui(new Ui::ReportUI)
 {
     ui->setupUi(this);
+
+    QPalette palette = ui->webView->palette();
+    palette.setBrush(QPalette::Base, Qt::transparent);
+    ui->webView->page()->setPalette(palette);
+    ui->webView->setAttribute(Qt::WA_OpaquePaintEvent, false);
 }
 
 ReportUI::~ReportUI()
@@ -79,7 +84,10 @@ void ReportUI::generateReport()
         // Add each report as a tab.
         foreach (Report *report, _reports)
         {
-            ui->tabReports->addTab(new QWidget, Data::typeToFriendlyString(report->type()));
+            QWidget *page = new QWidget;
+            QLayout *layout = new QVBoxLayout;
+            page->setLayout(layout);
+            ui->tabReports->addTab(page, Data::typeToFriendlyString(report->type()));
         }
     }
 
@@ -94,6 +102,7 @@ void ReportUI::reportTabChanged(int tab)
 
     Report *report = _reports.at(tab);
     ui->webView->setHtml(report->graphHtml(), QUrl("http://example.com"));
+    ui->tabReports->currentWidget()->layout()->addWidget(ui->webView);
 }
 
 void ReportUI::cancel()

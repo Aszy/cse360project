@@ -28,44 +28,19 @@ QString CardioWorkoutReport::graphHtml() const
     if (_dataList.isEmpty())
         return "Not enough data for report.";
 
-    QString html;
-    html = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
-           " <html xmlns=\"http://www.w3.org/1999/xhtml\">"
-           "   <head>"
-           "     <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>"
-           "    <script type=\"text/javascript\" src=\"//www.google.com/jsapi\"></script>"
-           "    <script type=\"text/javascript\">"
-           "      google.load('visualization', '1', {packages: ['corechart']});"
-           "    </script>"
-           "    <script type=\"text/javascript\">"
-           "      function drawVisualization() {"
-           "        var data = google.visualization.arrayToDataTable(["
-           "          ['x', 'Run Time', 'Run Distance', 'Average Run Speed'],"
-           "           %1"
-           "        ]);"
-           ""
-           "        new google.visualization.LineChart(document.getElementById('visualization'))."
-           "            draw(data, {width: 500, height: 400});"
-           "      }"
-           ""
-           "      google.setOnLoadCallback(drawVisualization);"
-           "    </script>"
-           "  </head>"
-           "  <body style=\"font-family: Arial;border: 0 none;\">"
-           "    <div id=\"visualization\" style=\"width: 500px; height: 400px;\"></div>"
-           "  </body>"
-           "</html>​";
-
-    QString formatted;
+    QStringList headers = QStringList() << "x" << "Run Time" << "Run Distance" << "Average Run Spin";
+    QList<QStringList> dataRows;
 
     foreach (Data *bdata, _dataList)
     {
         CardioWorkoutData *data = dynamic_cast<CardioWorkoutData *>(bdata);
-        formatted += "['" + data->recordedDate().toString() + "', ";
-        formatted += QString::number(data->runTime(), 'f', 1) + ", ";
-        formatted += QString::number(data->runDistance(), 'f', 1) + ", ";
-        formatted += QString::number(data->averageRunSpeed(), 'f', 1) + "],";
+        QStringList row;
+        row << "'" + data->recordedDate().toString() + "'";
+        row << QString::number(data->runTime(), 'f', 1);
+        row << QString::number(data->runDistance(), 'f', 1);
+        row << QString::number(data->averageRunSpeed(), 'f', 1);
+        dataRows << row;
     }
 
-    return html.arg(formatted);
+    return Report::graphHtmlTemplate(headers, dataRows);
 }

@@ -9,11 +9,9 @@
 #include <QMessageBox>
 #include <QApplication>
 
-void saveData()
+void saveData(QString filename)
 {
     // Save
-    QString directory = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
-    QString filename = QDir(directory).absoluteFilePath("repository.dat");
     QFile file(filename);
 
     // Attempt to open the file.
@@ -33,11 +31,9 @@ void saveData()
 }
 
 
-void loadData()
+void loadData(QString filename)
 {
     // Load
-    QString directory = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
-    QString filename = QDir(directory).absoluteFilePath("repository.dat");
     QFile file(filename);
 
     // Attempt to open the file.
@@ -58,19 +54,21 @@ void loadData()
 
 int main(int argc, char *argv[])
 {
+    QString filename = "repository.dat";
+
     // Initialize the application.
     QApplication a(argc, argv);
     HealthTrackerUI w;
     w.show();
 
     // Load the data from file.
-    loadData();
+    loadData(filename);
 
     // Run the application.
     int ret = a.exec();
 
     // Save the data to file.
-    saveData();
+    saveData(filename);
 
     return ret;
 }

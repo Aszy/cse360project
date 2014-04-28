@@ -12,7 +12,7 @@ TARGET = cse360project
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES += main.cpp \
     Data/data.cpp \
     Data/healthdata.cpp \
     Data/pulseratedata.cpp \

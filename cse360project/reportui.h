@@ -4,6 +4,7 @@
 #include "Report/report.h"
 
 #include <QDialog>
+#include <QPrinter>
 
 namespace Ui {
 class ReportUI;
@@ -19,8 +20,11 @@ public:
 
 public slots:
     void generateReport();
+    void printReport();
     void reportTabChanged(int);
     void cancel();
+
+    void printPage(QPrinter *);
 
 private:
     Ui::ReportUI *ui;

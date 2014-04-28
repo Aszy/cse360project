@@ -17,6 +17,8 @@
 #include "healthtrackerui.h"
 
 #include <QDebug>
+#include <QPrintPreviewDialog>
+#include <QScreen>
 
 ReportUI::ReportUI(QWidget *parent) :
     QDialog(parent),
@@ -96,6 +98,23 @@ void ReportUI::generateReport()
     reportTabChanged(0);
 }
 
+void ReportUI::printReport()
+{
+    // Create a print preview dialog.
+    QPrintPreviewDialog *preview = new QPrintPreviewDialog;
+    preview->connect(preview, SIGNAL(paintRequested(QPrinter*)), this, SLOT(printPage(QPrinter*)));
+
+    // Set up the printer.
+    QPrinter *printer = preview->printer();
+    printer->setOutputFormat(QPrinter::PdfFormat);
+    printer->setOutputFileName("report.pdf");
+    printer->setPaperSize(QPrinter::Letter);
+    printer->setResolution(300);
+    printer->setPageMargins(1.0f, 1.0f, 1.0f, 1.0f, QPrinter::DevicePixel);
+
+    preview->show();
+}
+
 void ReportUI::reportTabChanged(int tab)
 {
     if (tab == -1 || _reports.isEmpty())
@@ -112,4 +131,39 @@ void ReportUI::cancel()
 
     HealthTrackerUI *healthUI = new HealthTrackerUI;
     healthUI->setVisible(true);
+}
+
+void ReportUI::printPage(QPrinter *printer)
+{
+    // Create the reports.
+    generateReport();
+
+    // Create a temporary QWebView.
+    QWebView temporary;
+
+    // Create a painter for the printer.
+    QPainter painter;
+    painter.begin(printer);
+
+    // Set up printing code.
+    const qreal dpi = QGuiApplication::primaryScreen()->physicalDotsPerInch();
+    const qreal zoomFactorX = (qreal)printer->logicalDpiX() / dpi;
+    const qreal zoomFactorY = (qreal)printer->logicalDpiY() / dpi;
+    painter.scale(zoomFactorX, zoomFactorY);
+
+    QPoint top(dpi, dpi);
+
+    // Iterate through all the reports.
+    for (int i = 0; i < _reports.size(); i++)
+    {
+        Report *report = _reports.at(i);
+        QString html = report->graphHtml();
+        temporary.setHtml(html, QUrl("http://example.com"));
+        temporary.render(&painter, top, QRegion(printer->pageRect()));
+
+        if (i < _reports.size() - 1)
+            printer->newPage();
+    }
+
+    painter.end();
 }

@@ -410,10 +410,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>buttonPrint</sender>
+   <signal>clicked()</signal>
+   <receiver>ReportUI</receiver>
+   <slot>printReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>507</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>361</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cancel()</slot>
   <slot>generateReport()</slot>
   <slot>reportTabChanged(int)</slot>
+  <slot>printReport()</slot>
  </slots>
 </ui>

@@ -47,7 +47,8 @@ SOURCES += main.cpp \
     Report/sleepamountreport.cpp \
     Report/strengthworkoutreport.cpp \
     Report/workhoursreport.cpp \
-    Report/cardioworkoutreport.cpp
+    Report/cardioworkoutreport.cpp \
+    Report/dailyaveragereport.cpp
 
 HEADERS  += \
     Data/data.h \
@@ -84,7 +85,8 @@ HEADERS  += \
     Report/sleepamountreport.h \
     Report/strengthworkoutreport.h \
     Report/workhoursreport.h \
-    Report/cardioworkoutreport.h
+    Report/cardioworkoutreport.h \
+    Report/dailyaveragereport.h
 
 FORMS    += \
     healthtrackerui.ui \

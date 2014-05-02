@@ -13,6 +13,7 @@
 #include "Report/workhoursreport.h"
 #include "Report/cardioworkoutreport.h"
 #include "Report/strengthworkoutreport.h"
+#include "Report/dailyaveragereport.h"
 
 #include "healthtrackerui.h"
 
@@ -74,6 +75,9 @@ void ReportUI::generateReport()
     if (ui->checkStrengthWorkout->isChecked())
         _reports.append(new StrengthWorkoutReport(Data::repository, start, end));
 
+    if (ui->checkDailyAverage->isChecked())
+	_reports.append(new DailyAverageReport(Data::repository, start, end));
+
     qDebug() << "Created " + QString::number(_reports.size()) + " reports";
 
     ui->tabReports->clear();
@@ -90,7 +94,7 @@ void ReportUI::generateReport()
             QWidget *page = new QWidget;
             QLayout *layout = new QVBoxLayout;
             page->setLayout(layout);
-            ui->tabReports->addTab(page, Data::typeToFriendlyString(report->type()));
+	    ui->tabReports->addTab(page, report->name());
         }
     }
 

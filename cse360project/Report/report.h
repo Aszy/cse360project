@@ -16,6 +16,7 @@ public:
 
     /* Accessors */
     DataType type() const { return _type; }
+    virtual QString name() const { return Data::typeToFriendlyString(_type); }
 
     QList<Data *> dataList() { return _dataList; }
     QDate startDate() { return _start; }

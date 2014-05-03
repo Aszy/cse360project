@@ -9,7 +9,7 @@
 #include <QMessageBox>
 #include <QApplication>
 
-void saveData(QString filename)
+bool saveData(QString filename)
 {
     // Save
     QFile file(filename);
@@ -18,7 +18,7 @@ void saveData(QString filename)
     if (!file.open(QIODevice::WriteOnly))
     {
         qDebug() << "Couldn't open the file to write";
-        return;
+        return false;
     }
 
     // Serialize the data into the file.
@@ -28,10 +28,12 @@ void saveData(QString filename)
 
     // Notify the user.
     qDebug() << "Saved " + QString::number(Data::repository.size()) + " entries.";
+
+    return true;
 }
 
 
-void loadData(QString filename)
+bool loadData(QString filename)
 {
     // Load
     QFile file(filename);
@@ -40,7 +42,7 @@ void loadData(QString filename)
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Couldn't open the file to read";
-        return;
+        return false;
     }
 
     // Deserialize the data from the file.
@@ -50,6 +52,8 @@ void loadData(QString filename)
 
     // Notify the user.
     qDebug() << "Loaded " + QString::number(Data::repository.count()) + " entries.";
+
+    return true;
 }
 
 int main(int argc, char *argv[])

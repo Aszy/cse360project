@@ -9,8 +9,8 @@ recorded, the user will be able to view a graph showing and comparing all
 of the health information they entered previously, and they will be able to 
 use that data  to make important health decision.
 
-Authors
--------
+Authors - Team 16
+-----------------
 * Sajid Anwar
 * Shivaan Kulanathan
 * Josh Miklos 
@@ -20,9 +20,9 @@ Authors
 Download
 ---------
 
-* [Video of Phase II prototype \[00:34\]][1]
+* [Phase III Implementation][1]
 
-[1]: https://raw.githubusercontent.com/Aszy/cse360project/master/phase2-prototype.mov
+[1]: https://github.com/Aszy/cse360project/releases/download/v1.0/team-16-phase-3.zip
 
 Requirements
 ------------
